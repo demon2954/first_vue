@@ -3,13 +3,13 @@
 		<div id="search">
 			<img id="more" src="../../assets/more.png" />
 			<input id="search_input" ref="search_input" type='text'>
-			<img id="search-btn" src="../../assets/more.png" v-on:click="search1" />
+			<img id="search-btn" src="../../assets/search.png" v-on:click="search1" />
 		</div>
 		<Swiper ref="swiper" v-if="list.length > 0" :autoPlay='true' :showIndicator='true' interval="2000" duration="1000">
 			<!-- <Slide @click="clickMe" v-for="(tag,key) in list" :key="key"> -->
 			<Slide v-for="(tag,key) in list" :key="key">
 				<div id="swiper_div">
-					<img id="more" src="../../assets/swiper.png" />
+					<img src="../../assets/swiper.png" />
 					<!-- <a href="https://www.baidu.com"><img :src="tag.img" /></a> -->
 				</div>
 			</Slide>
@@ -33,12 +33,13 @@
 		data: function() {
 			return {
 				txt: 'dfdf',
-				list: [
-					{img: ''},
-					{img: ''},
-					{img: ''},
-					{img: ''}
-				]
+				list: [{
+					img: ''
+				},{
+					img: ''
+				},{
+					img: ''
+				}]
 			}
 		},
 		components: {
@@ -65,22 +66,30 @@
 	#search {
 		text-align: center;
 		padding: 4px 0px 4px 0px;
+		height: 20px;
 		background: #EEC211;
+		display: flex;
 	}
 
 	#more {
+		border-radius: 50%;
+		width: 20px;
+		height: 20px;
 		float: left;
-		padding: 0px 0px 0px 5px;
+		padding: 0px 1% 0px 5px;
 	}
 
 	#search_input {
-		position: inherit;
+		float: left;
 		width: 80%;
+		padding: 0px 1% 0px 5px;
 	}
 
 	#search-btn {
+		width: 20px;
+		height: 20px;
 		float: right;
-		padding: 0px 5px 0px 0px;
+		padding: 0px 5px 0px 1%;
 	}
 
 	#swiper_div {
@@ -110,7 +119,7 @@
 	}
 
 	.middle_word {
-		position:absolute;
+		position: absolute;
 		padding: 0px 25% 0px 25%;
 		margin-top: -15%;
 	}
